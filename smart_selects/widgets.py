@@ -140,7 +140,7 @@ class ChainedSelect(JqueryMediaMixin, Select):
         attrs.update(self.attrs)
         attrs["data-chainfield"] = chained_field
         attrs["data-url"] = url
-        attrs["data-value"] = "null" if value is None or value == "" else value
+        attrs["data-value"] = "null" if value is None or value == "" else json.dumps(value)
         attrs["data-auto_choose"] = auto_choose
         attrs["data-empty_label"] = escape(empty_label)
         attrs["name"] = name
